@@ -1,8 +1,11 @@
-FROM python:3
+FROM python:3.10
 
 WORKDIR /data
 
 RUN pip install django==3.2
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt  # Create this file with django==3.2
 
 COPY . .
 
